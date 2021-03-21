@@ -66,4 +66,16 @@
     <url>/2020/12/12/test/</url>
     <content><![CDATA[]]></content>
   </entry>
+  <entry>
+    <title></title>
+    <url>/2021/03/12/%E5%AF%86%E7%A0%81%E5%AD%A6/</url>
+    <content><![CDATA[<p>base 64加密</p>
+<p>凯撒密码（caeser）</p>
+<p>摩斯密码（morse）</p>
+<p>幂函数加密</p>
+<p>栏栅密码（Ralifence）</p>
+<p>unicode（统一码）</p>
+<p>内容中常以&amp;#开头，后面跟上128以内的数字</p>
+]]></content>
+  </entry>
 </search>
