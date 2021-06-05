@@ -355,13 +355,13 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public void hide()&#123;</span><br><span class="line">            textView_link.setVisibility(View.GONE);</span><br><span class="line">            linearLayout.setVisibility(View.GONE);</span><br><span class="line">            imageView1.setVisibility(View.GONE);</span><br><span class="line">            textView1.setVisibility(View.GONE);</span><br><span class="line">            imageView2.setVisibility(View.GONE);</span><br><span class="line">            textView2.setVisibility(View.GONE);</span><br><span class="line">            imageView3.setVisibility(View.GONE);</span><br><span class="line">            textView3.setVisibility(View.GONE);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 
 <p>下面来看下具体例子（GONE）</p>
-<p><img src="/home/qyh/Pictures/%E6%88%AA%E5%9B%BE%E5%BD%95%E5%B1%8F_%E9%80%89%E6%8B%A9%E5%8C%BA%E5%9F%9F_20210604233532.jpg" alt="image1"></p>
+<p><img src="https://z3.ax1x.com/2021/06/05/2NksQ1.jpg" alt="image1"></p>
 <p>（请大家放我一马，别冲我）</p>
 <p>如上设置后看效果</p>
-<p><img src="/home/qyh/Pictures/%E6%88%AA%E5%9B%BE%E5%BD%95%E5%B1%8F_%E9%80%89%E6%8B%A9%E5%8C%BA%E5%9F%9F_20210605000113.jpg" alt="image2"></p>
+<p><img src="https://z3.ax1x.com/2021/06/05/2NknZ8.jpg" alt="image2"></p>
 <p>而设置成（INVISIBLE）</p>
-<p><img src="/home/qyh/Pictures/%E6%88%AA%E5%9B%BE%E5%BD%95%E5%B1%8F_%E9%80%89%E6%8B%A9%E5%8C%BA%E5%9F%9F_20210605000439.jpg" alt="image3"></p>
-<p>这样应该很清楚GONEHEINVISIBLE的区别了</p>
+<p><img src="https://z3.ax1x.com/2021/06/05/2NkUdU.jpg" alt="image3"></p>
+<p>这样应该很清楚GONE和INVISIBLE的区别了</p>
 <h2 id="3-项目更新图片"><a href="#3-项目更新图片" class="headerlink" title="3.项目更新图片"></a>3.项目更新图片</h2><p>我们知道在获取返回类时，avatars里面装的是图片地址，我们的第一个翻译就是使用网络请求，单纯就此讲一下网络请求中更新图片。</p>
 <p>首先，正常情况下不会选择Retrofit来进行对大量图片的请求，因为Retrofit使用时要填充baseUrl，并且在GET里要再次填充后面的部分，因为大量图片的baseUrl是不同的，因此拿到网址再用方法处理这个事情时会额外花费一定时间，得不偿失。当然，会有和我一样的人敢于尝试，就是直接不填GET里面的部分，全部丢到baseUrl里，很遗憾，Android Studio把我捶回地面，直接报错（baseUrl必须以’/‘结尾）。</p>
 <h3 id="1-初次尝试"><a href="#1-初次尝试" class="headerlink" title="1.初次尝试"></a>1.初次尝试</h3><p>下面展示一下代码部分</p>
@@ -383,9 +383,10 @@
 </ul>
 </li>
 </ul>
-<p>这样更新的话特点是耗时长，而且在加载的时候会出现图像重复加载和错位，半天改不过来。</p>
-<p>以下是效果（10s+）：</p>
-<h3 id="2-再次尝试"><a href="#2-再次尝试" class="headerlink" title="2.再次尝试"></a>2.再次尝试</h3><p>为了解决那个问题，我在百度上查了好久，有一种用ASYNCTASK异步处理的升级版方法，反正我没成功(狗头)。这中方法要重写这儿，重写那儿的。emmmmm不符合我的懒人思想，所以就没太深究。再次之后我了解到一种全新的方法Glide。我反正看到的特点就是简单。</p>
+<p>这样更新的话特点是耗时长(今天重新测试的时候速度有明显的提升，是网络问题还是mvp模式？)，而且在加载的时候会出现图像重复加载和错位。</p>
+<p>以下是效果（5s左右）：</p>
+<p><strong>…没找到类似于视频床的东西（菜狗）</strong></p>
+<h3 id="2-再次尝试"><a href="#2-再次尝试" class="headerlink" title="2.再次尝试"></a>2.再次尝试</h3><p>为了解决那个问题，我在百度上查了好久，有一种用ASYNCTASK异步处理的升级版方法，反正我没成功(狗头)。这中方法要重写这儿，重写那儿的。emmmmm,不符合我的懒人思想，所以就没太深究。再次之后我了解到一种全新的方法Glide。我反正看到的特点就是简单。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Glide.with(context)</span><br><span class="line">    .load(url)&#x2F;&#x2F;设置请求的url</span><br><span class="line">    .priority (Priority.HIGH)&#x2F;&#x2F;有多个Gilde时用优先级区别，这里设置为高</span><br><span class="line">    .placeholder(R.drawable.place_image)&#x2F;&#x2F;图片加载出来前，显示的图片；类似于等待时的显示</span><br><span class="line">    .error(R.drawable.error_image)&#x2F;&#x2F;图片加载失败后，显示的图片</span><br><span class="line">    .thumbnail(0.2f)&#x2F;&#x2F;Glide 将会显示原始图片的20%的大小</span><br><span class="line">    .override(width,height)&#x2F;&#x2F;这里的单位是px,这个可以无视视图本来的大小进行显示</span><br><span class="line">    .skipMemoryCache(true)&#x2F;&#x2F;跳过内存缓存；一般默认都是false，不用写</span><br><span class="line">    .diskCacheStrategy( DiskCacheStrategy.NONE )&#x2F;&#x2F;关闭磁盘缓存</span><br><span class="line">    .into(imageView);&#x2F;&#x2F;更新哪个图片</span><br></pre></td></tr></table></figure>
 
 <p>当然了，Glide还能再定义什么加载动画啊什么的，反正功能挺多的。使用时只用三个最基本的.with().load().into()三个属性就能使用。</p>
@@ -393,8 +394,9 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">RequestOptions options &#x3D; new RequestOptions()</span><br><span class="line">                .placeholder(R.mipmap.test);</span><br><span class="line"></span><br><span class="line">        Glide.with(context)</span><br><span class="line">                .asBitmap()&#x2F;&#x2F;设置加载的类型，还有其他的类...</span><br><span class="line">                .load(url)</span><br><span class="line">                .apply(options)</span><br><span class="line">                .into(holder_choose.imageView);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <p>好简洁啊，有木有QwQ</p>
-<p>效果如下（4s）：</p>
-<p>这个可以解决那个图片加载错位和网络请求超慢的问题。</p>
+<p>效果如下（4s左右）：</p>
+<p><strong>…没找到类似于视频床的东西（菜狗）</strong></p>
+<p>这个可以解决那个图片加载错位的问题。</p>
 <h3 id="3-未来尝试——下次一定"><a href="#3-未来尝试——下次一定" class="headerlink" title="3.未来尝试——下次一定"></a>3.未来尝试——下次一定</h3><p>还有一种叫Fresco的方法，很实用，听学长说更新网络图片很多用这个方法。好家伙，一百度出来就说，这个方法专为Android更新图片而生！！！看起来b格就很高。</p>
 ]]></content>
   </entry>
