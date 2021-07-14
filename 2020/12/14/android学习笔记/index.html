@@ -10,7 +10,7 @@
     
     
     
-    <title>归档 | Hexo</title>
+    <title>安卓学习笔记 | Hexo</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -178,89 +178,74 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
     
     <div class="cube-content">
         <div class="cube-left">
-            <style>
-    @media(max-width: 768px) {
-        body {
-            background-color: #fff!important;
-        }
-    }
-</style>
-<div class="cube-archives">
+            <div class="cube-article">
+    <h1 class="title">安卓学习笔记</h1>
     
-        
-        <div class="cube-archive" style="margin-top: 0;">
-            
-                
-                   
-                            <h1 class="title">2021</h1>
-                            <ul class="posts">
-                   
-                            <li class="post">
-                                <a href="/2021/06/04/%E8%8F%9C%E9%B8%A1%E7%9A%84%E5%88%92%E6%B0%B4%E6%97%A5%E5%B8%B8/"></a>
-                            </li>
-                
-            
-                
-                   
-                            <li class="post">
-                                <a href="/2021/05/15/crypto/">冲刺卷RSA</a>
-                            </li>
-                
-            
-                
-                   
-                            <li class="post">
-                                <a href="/2021/04/10/Room%E6%95%B0%E6%8D%AE%E5%BA%93/"></a>
-                            </li>
-                
-            
-                
-                   
-                                </ul>
-                            </div>
-                        <div class="cube-archive">
-                        
-                            <h1 class="title">2020</h1>
-                            <ul class="posts">
-                   
-                            <li class="post">
-                                <a href="/2020/12/14/%E5%AF%86%E7%A0%81%E5%AD%A6/">古典密码</a>
-                            </li>
-                
-            
-                
-                   
-                            <li class="post">
-                                <a href="/2020/12/14/android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">安卓学习笔记</a>
-                            </li>
-                
-            
-                
-                   
-                                </ul>
-                            </div>
-                        <div class="cube-archive">
-                        
-                            <h1 class="title">1970</h1>
-                            <ul class="posts">
-                   
-                            <li class="post">
-                                <a href="/1970/01/01/base64/">base64</a>
-                            </li>
-                
-            
-                
-                   
-                            <li class="post">
-                                <a href="/1970/01/01/Java%E5%AD%A6%E4%B9%A0/">java学习笔记</a>
-                            </li>
-                
-            
-                    </ul>
-                        </div>
-        
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            2020-12-14
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/android/">#-android</a>
     
 </div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h1 id="android学习"><a href="#android学习" class="headerlink" title="android学习"></a>android学习</h1><a id="more"></a>
+
+<h1 id="接收返回结果："><a href="#接收返回结果：" class="headerlink" title="接收返回结果："></a>接收返回结果：</h1><p> 当startActivityForResult()启动的Activity完成任务退出时，系统会回调你调用Activity的onActivityResult()方法，这个方法有三个参数：</p>
+<ul>
+<li><p>resquestCode : 启动Activity时传递的requestCode；</p>
+</li>
+<li><p>resultCode: 表示调用成功或者失败的变量，值为下面二者之一；   </p>
+<p>​     /** Standard activity result: operation canceled. */  </p>
+<p>​     public static final int RESULT_CANCELED   = 0;  </p>
+<p>​     /** Standard activity result: operation succeeded. */  </p>
+<p>​     public static final int RESULT_OK      = -1;  </p>
+</li>
+<li><p>Intent：包含返回内容的Intent；</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onActivityResult</span><span class="params">(<span class="keyword">int</span> requestCode, <span class="keyword">int</span> resultCode, Intent data)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (resultCode != Activity.RESULT_OK) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (requestCode == REQUEST_CODE_CHEAT) &#123;</span><br><span class="line">            <span class="keyword">if</span> (data == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;<span class="comment">//前面基本是废话.</span></span><br><span class="line">            mIsCheater = CheatActivity.wasAnswerShown(data);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        <li class="prev">
+            <a href="/2020/12/14/%E5%AF%86%E7%A0%81%E5%AD%A6/">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                古典密码
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/1970/01/01/base64/">
+                base64
+                <i class="cube-icon cube-next" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+
+
         </div>
         <div class="cube-right">
             
@@ -420,7 +405,7 @@ color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com
         </div>
         
         
-        <div class="cube-box-bg ">
+        <div class="cube-box ">
             <a href="/tags/java/">#java</a>
         </div>
         

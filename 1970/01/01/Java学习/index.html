@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="qiu-yunhao">
+    
+    
+    
+    
+    
+    
+    <title>java学习笔记 | Hexo</title>
+    <!-- inject:style -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <!-- endinject -->
+    <style>
+        .cube-loading {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: url('/images/lg/loading.gif') no-repeat center center;
+            background-color: rgba(0,0,0,.7);
+        }
+
+        .cube-loading.out {
+            display: none;
+        }
+
+        .cube-loading:before {
+            display: block;
+            content: '加载中';
+            position: relative;
+            width: 100%;
+            top: 50%;
+            right: -50%;
+            color: #fff;
+        }
+
+        @media(max-width: 768px) {
+            .cube-loading:before {
+                font-size: 1.2em;
+                transform: translate(-24px,20px);
+                -webkit-transform: translate(-24px,20px);
+                -o-transform: translate(-24px,20px);
+                -ms-transform: translate(-24px,20px);
+            }
+        }
+
+        @media(min-width: 768px) {
+            .cube-loading:before {
+
+            }
+        }
+    </style>
+    
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+
+<!--浏览器搞笑标题-->
+<script type="text/javascript" src="/js/FunnyTitle.js"></script>
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+
+<!--动态线条背景-->
+<script type="text/javascript"
+color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+<body>
+<div class="cube-body">
+    <nav id="cube-top-memu" class="cube-menu">
+    <ul class="cube-menu-collapse">
+        
+        <li>
+            <i class="cube-icon cube-icon-home" aria-hidden="true"></i>
+            <a href="/">首页</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-archive" aria-hidden="true"></i>
+            <a href="/archives">归档</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-categories" aria-hidden="true"></i>
+            <a href="/categories">分类</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-tags" aria-hidden="true"></i>
+            <a href="/tags">标签</a>
+        </li>
+        
+        <li>
+            <i class="cube-icon cube-icon-about" aria-hidden="true"></i>
+            <a href="/about-me">关于我</a>
+        </li>
+        
+    </ul>
+</nav>
+<nav class="cube-side-menu" id="cube-side-menu">
+    <ul class="cube-menu-list">
+        
+        <li>
+            <a class="lrc-control">开启歌词</a>
+        </li>
+        
+        <li>
+            <a class="scroll-to-top">回到顶部</a>
+        </li>
+    </ul>
+</nav>
+    <header class="cube-header" id="cube-header">
+    <img src=" https://z3.ax1x.com/2021/07/14/WVyaPP.jpg " alt="头部背景图片">
+    
+    <div class="cube-type">
+        <span class="cube-typed-title">qyh的摸鱼场</span>
+        <span class="cube-typed-cursor">|</span>
+    </div>
+    
+</header>
+
+    <style>
+        nav.cube-menu:before {
+            content: '';
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 44px;
+        
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+        
+            z-index: -1;
+            background-image: url('https://z3.ax1x.com/2021/07/14/WVyaPP.jpg');
+            background-repeat: no-repeat;
+            background-position: center -356px;
+            background-size: cover;
+            background-color: transparent;
+        }
+
+        header.cube-background.cube-header-background {
+            visibility: hidden;
+            background-image: url('https://z3.ax1x.com/2021/07/14/WVyaPP.jpg');
+            background-position: center -400px;
+        }
+    </style>
+    <header class="cube-background cube-header-background">
+        
+        <div class="cube-type">
+            <span class="cube-typed-title">qyh的摸鱼场</span>
+            <span class="cube-typed-cursor">|</span>
+        </div>
+        
+    </header>
+    <div class="load-header-background"></div>
+    <script>
+        (function (window) {
+
+            window.headerModule = {}
+            window.headerModule.image = {
+                width: '2000',
+                height: '1414'
+            }
+
+        })(window)
+    </script>
+    
+    <div class="cube-content">
+        <div class="cube-left">
+            <div class="cube-article">
+    <h1 class="title">java学习笔记</h1>
+    
+    <div class="cube-article-header">
+        <div class="cube-article-date">
+            <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+            <!-- moment.js对象 -->
+            1970-01-01
+        </div>
+        <div class="cube-article-tags">
+    <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+    
+    <a href="/tags/java/">#java</a>
+    
+</div>
+    </div>
+    
+    <div class="cube-article-content cube-markdown">
+        
+        <h1 id="java的再学习经历"><a href="#java的再学习经历" class="headerlink" title="java的再学习经历"></a>java的再学习经历</h1><p>一只菜鸡苦苦挣扎，企图学好java</p>
+<a id="more"></a>
+
+<h1 id="4-17"><a href="#4-17" class="headerlink" title="4.17"></a>4.17</h1><h2 id="1-java中访问修饰符"><a href="#1-java中访问修饰符" class="headerlink" title="1.java中访问修饰符"></a>1.java中访问修饰符</h2><ul>
+<li><p><strong>default</strong> (即默认，什么也不写）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。</p>
+</li>
+<li><p><strong>private</strong> : 在同一类内可见。使用对象：变量、方法。 <strong>注意：不能修饰类（外部类）</strong></p>
+<ul>
+<li><p>1.在当前类开发中，main方法之外可以直接借助名字使用，当前类的main方法中可以使用对象打点的方式直接使用成员。</p>
+<p>　　　2.在当前类之外，使用对象（或是类名，针对静态的）打点调用都是被限制的。这时候有同学问，那我开发的这个私有的成员难道不能使用了吗？不是，可以通过在当前类中开发一个公有的方法，在公有方法中可以使用这个私有的成员，从而达到间接使用私有成员。</p>
+<pre><code>  　　　3.在继承中，私有成员禁止被继承，也就是说在子类的开发中，拒绝直接使用私有成员的名字进行使用。</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>public</strong> : 对所有类可见。使用对象：类、接口、变量、方法</p>
+<ul>
+<li><p>1.在当前类开发中，main方法之外可以直接借助名字使用，当前类的main方法中可以使用对象打点的方式直接使用成员。</p>
+<p>　　　2.在当前类之外，使用对象（或是类名，针对静态的）打点调用是被允许的。</p>
+<pre><code>  　　　3.在子类中，公有成员允许被继承，也就是说在子类的开发中，可以直接使用公有成员的名字进行使用。</code></pre>
+</li>
+</ul>
+</li>
+<li><p><strong>protected</strong> : 对同一包内的类和所有子类可见。使用对象：变量、方法。 <strong>注意：不能修饰类（外部类）</strong>。</p>
+<ul>
+<li><ul>
+<li>同一个包的情况：</li>
+</ul>
+<p>　　　1.在当前类开发中，main方法之外可以直接借助名字使用，当前类的main方法中可以使用对象打点的方式直接使用成员。</p>
+<p>　　　2.在当前类之外，同一个包中，使用对象（或是类名，针对静态的）打点调用是被允许的。</p>
+<p>　　　3.在子类中，同一个包中，受保护成员允许被继承，也就是说在子类的开发中，可以直接使用受保护成员的名字进行使用。子类的main方法中可以使用子类或是父类对象打点调用。</p>
+<p>　　　4.在当前类之外，子类之外，要使用子类的类中，同一个包中，可以使用子类或是父类对象打点调用。</p>
+<ul>
+<li>不同包的情况：</li>
+</ul>
+<p>　　　1.在当前类之外，不同包中，使用对象（或是类名，针对静态的）打点调用是被禁止的。</p>
+<p>　　　2.在子类中，不同包中，受保护成员允许被继承，也就是说在子类的开发中，可以直接使用受保护成员的名字进行使用。子类的main方法中只能通过子类对象打点调用。父类对象不行，这个时候相当于父类中的受保护成员跨包了。</p>
+<p>　　　3.在当前类之外，子类之外，要使用子类的类中，与子类同一个包中，通过子类对象打点是调用不出父类中的受保护的成员的。父类对象更不行，这个时候相当于父类中的受保护成员跨包了。如果想要通过子类对象调用父类的受保护的成员，需要重新覆写父类的这个成员。</p>
+<p>　　　4.在当前类之外，子类之外，要使用子类的类中，与父类同一个包中，通过子类对象打点是可以调用父类中的受保护的成员的。父类对象也行，同个包中。</p>
+<p>　　　5.在与父类和子类都不同包的第三个包中，要想通过子类对象调用父类的受保护成员，可以通过覆写父类受保护成员，并将访问限制符修改成public。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-String类"><a href="#2-String类" class="headerlink" title="2.String类"></a>2.String类</h2><p>注意String和String【】是两种不同的东西</p>
+<h3 id="1-String→String-类使用方法"><a href="#1-String→String-类使用方法" class="headerlink" title="1.String→String[]类使用方法"></a>1.String→String[]类使用方法</h3><ul>
+<li><pre><code>char[] ch = s.toCharArray();
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* &#96;&#96;&#96;</span><br><span class="line">  char[] ch &#x3D; new Char[n];</span><br><span class="line">  </span><br><span class="line">  for(int  i&#x3D;0;i&lt;n;i++ )&#123;</span><br><span class="line">  </span><br><span class="line">      ch[i] &#x3D; s.charAt(i);</span><br><span class="line">  </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+<h3 id="2-String-→String类的方法"><a href="#2-String-→String类的方法" class="headerlink" title="2.String[]→String类的方法"></a>2.String[]→String类的方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">char[] arr &#x3D; new char[4];</span><br><span class="line">arr[0] &#x3D; &#39;1&#39;;</span><br><span class="line">arr[1] &#x3D; &#39;2&#39;;</span><br><span class="line">arr[2] &#x3D; &#39;3&#39;;</span><br><span class="line">arr[3] &#x3D; &#39;4&#39;;</span><br><span class="line">String str &#x3D; new String(arr,0,3);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-字符串进行比较（str1，str2）"><a href="#3-字符串进行比较（str1，str2）" class="headerlink" title="3.字符串进行比较（str1，str2）"></a>3.字符串进行比较（str1，str2）</h3><ul>
+<li>千万不能用“==”来比较，这种方法比较的str1,str2的地址是否相同，妈的绝了.</li>
+<li>应当使用的是str1.equals(str2)</li>
+</ul>
+<h2 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><ul>
+<li>类：类是构造对象的模板</li>
+<li>对象：是类的实例</li>
+</ul>
+<p>理解：类表示一个群体的公共属性：比如学生的公共属性有姓名，性别，年龄</p>
+<p>​            而对象则是类的具现（或者说特例？）比如学生张三,他也拥有姓名，性别，年龄等属性，并将其具体化，时期成为自身的独特属性。</p>
+<p>这样来看的话，类就相当于集合的概念，而对象则是其中的元素，最为巧合的是集合中元素的不重复性相当于此</p>
+<p>处对象的特性（因为特性不同使对象唯一）</p>
+<h3 id="2-类与类之间的关系"><a href="#2-类与类之间的关系" class="headerlink" title="2.类与类之间的关系"></a>2.类与类之间的关系</h3><ul>
+<li>依赖（）</li>
+<li>聚合（）</li>
+<li>继承（extend）<ul>
+<li>一个类（称为子类、子接口）继承另外的一个类（称为父类、父接口）的功能，并可以增加它自己的新功能</li>
+<li>理解：感觉就是一个类进行具象化，但又没有new一个对象那样彻底，有点套娃的感觉</li>
+</ul>
+</li>
+<li>关联（）<ul>
+<li>类B作为成员变量形成存在于类A中</li>
+<li>理解：感觉List&lt;&gt;是不是这方面的典型代表???</li>
+</ul>
+</li>
+<li>组合（）</li>
+<li>实现/接口实现（implements）</li>
+</ul>
+<h2 id="4-静态域静态方法和普通方法的区别"><a href="#4-静态域静态方法和普通方法的区别" class="headerlink" title="4.静态域静态方法和普通方法的区别"></a>4.静态域静态方法和普通方法的区别</h2><h3 id="1-静态域"><a href="#1-静态域" class="headerlink" title="1.静态域"></a>1.静态域</h3><ul>
+<li><p>定义：静态域指的是类中用关键字<code>static</code>修饰的域，<strong>每个类中只有一个这样的域</strong>，每一个对象对于所有的实例域都有一个自己的拷贝.该类的每一个实例共享这个变量，这个变量存在于内存中的一个固定的位置。该类的任何实例都可以更改静态域的值，也可以在不创建类实例的情况下访问静态域。(关键字<code>static</code>的含义是：<strong>属于类，但不属于类对象的变量和函数</strong>)</p>
+</li>
+<li><p>举个栗子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Bicycle &#123;</span><br><span class="line">        </span><br><span class="line">    private int cadence;</span><br><span class="line">    private int gear;</span><br><span class="line">    private int speed;</span><br><span class="line">    private int id;</span><br><span class="line">    private static int numberOfBicycles &#x3D; 0;</span><br><span class="line">        </span><br><span class="line">    public Bicycle(int startCadence, int startSpeed, int startGear)&#123;</span><br><span class="line">        gear &#x3D; startGear;</span><br><span class="line">        cadence &#x3D; startCadence;</span><br><span class="line">        speed &#x3D; startSpeed;</span><br><span class="line">        id &#x3D; ++numberOfBicycles;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>假设要创建多个Bicycle对象并为每个对象分配一个ID，第一个对象ID为1。此ID号对于每个对象都是唯一的，因此是一个实例变量。同时，您需要一个变量来表示Bicycle已创建的对象数，以便知道要分配给下一个对象的ID。这个域与任何单个对象无关，而与整个类有关，可以将这个域设置为静态域。</p>
+</li>
+</ul>
+<h3 id="2-静态方法"><a href="#2-静态方法" class="headerlink" title="2.静态方法"></a>2.静态方法</h3><ul>
+<li><p>定义：静态方法是指使用static修饰的方法。和静态域一样，它属于类，而不是某个实例。可以通过类名去调用它而不用先创建类的实例</p>
+</li>
+<li><p>举个栗子</p>
+<ul>
+<li><p>尽管也可以通过创建实例去访问类的静态方法，但不鼓励这么做。通常使用静态方法去访问静态域，例如，可以通过一个静态方法去访问Bicycle类的静态域numberOfBicycles</p>
+</li>
+<li><pre><code>public static int getNumberOfBicycles() &#123;
+    return numberOfBicycles;
+&#125;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">### 3.静态域、静态方法、非静态域和非静态方法之间的访问规则如下</span><br><span class="line"></span><br><span class="line">- 非静态方法可以访问其他非静态方法和非静态域</span><br><span class="line">- 非静态方法可以访问静态方法和静态域</span><br><span class="line">- 静态方法可以访问其他静态方法和静态域</span><br><span class="line">- 静态方法不能访问非静态方法和非静态域</span><br><span class="line"></span><br><span class="line">总的来说就是非静态方法可以访问所有成员，而静态方法只能访问静态成员。</span><br><span class="line"></span><br><span class="line">### 4.常量</span><br><span class="line"></span><br><span class="line">* static关键字常和final关键字一起用来定义常量。final修饰符意味着域的值不能改变。</span><br><span class="line"></span><br><span class="line">* &#96;&#96;&#96;</span><br><span class="line">  static final double PI &#x3D; 3.141592653589793;</span><br></pre></td></tr></table></figure></code></pre>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>被final修饰的变量一旦赋值以后就不能再修改。常量的命名规范是大写每个字母并且使用下划线（_）分隔每个单词。</li>
+<li>如果使用fianl修饰引用类型的变量，并不是说这个变量引用的对象不能发生任何改变，而是说这个变量不能再去引用别的对象。</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-构造器"><a href="#5-构造器" class="headerlink" title="5.构造器"></a>5.构造器</h2><h3 id="1-定义-1"><a href="#1-定义-1" class="headerlink" title="1.定义"></a>1.定义</h3><p>构造器通常也叫构造方法、构造函数，构造器在每个项目中几乎无处不在。当你new一个对象时，就会调用构造器。构造器格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">People people &#x3D; new People();&#x2F;&#x2F;()里可以填入参数</span><br></pre></td></tr></table></figure>
+
+<p>如果没有定义构造器，则会默认一个无参构造器，这就是为什么你定义了一个对象，比如 People，没有定义任何构造器却可以new这个对象,比如 new People() 。如果自定义了构造器，则会覆盖默认构造器。</p>
+<h3 id="2-注意事项"><a href="#2-注意事项" class="headerlink" title="2.注意事项"></a>2.注意事项</h3><ul>
+<li>构造方法作用：（1）构造出来一个类的实例 （2）对构造出来个一个类的实例（对象）初始化</li>
+<li>构造方法的名字必须与定义他的类名完全相同，没有返回类型，甚至连void也没有</li>
+<li>主要完成对象的初始化工作，构造方法的调用是在创建一个对象时使用new操作进行的</li>
+<li>类中必定有构造方法，若不写，系统自动添加无参构造方法。接口不允许被实例化，所以接口中没有构造方法</li>
+<li>不能被static、final、synchronized、abstract和native修饰</li>
+<li>构造方法在初始化对象时自动执行,一般不能显式地直接调用.</li>
+<li>当同一个类存在多个构造方法时，java编译系统会自动按照初始化时最后面括号的参数个数以及参数类型来自动一一对应,完成构造函数的调用</li>
+<li>构造方法可以被重载。没有参数的构造方法称为默认构造方法，与一般的方法一样，构造方法可以进行任何活动,但是经常将他设计为进行各种初始化活动，比如初始化对象的属性</li>
+</ul>
+<h1 id="4-23"><a href="#4-23" class="headerlink" title="4.23"></a>4.23</h1><h2 id="1-继承"><a href="#1-继承" class="headerlink" title="1.继承"></a>1.继承</h2><p>在 Java 中通过 extends 关键字可以申明一个类是从另外一个类继承而来的，一般形式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class 父类 &#123;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">class 子类 extends 父类 &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>子类就具有父类当中的属性和方法，子类就不会存在重复的代码，维护性也提高，代码也更加简洁，提高代码的复用性（复用性主要是可以多次使用，不用再多次写同样的代码）</p>
+<h2 id="2-多态"><a href="#2-多态" class="headerlink" title="2.多态"></a>2.多态</h2><p>​        多态性是面向对象编程的又一个重要特征，它是指在父类中定义的属性和方法被子类继承之后，可以具有不同的数据类型或表现出不同的行为，这使得同一个属性或方法在父类及其各个子类中具有不同的含义。</p>
+<p>​        对面向对象来说，多态分为编译时多态和运行时多态。其中编译时多态是静态的，主要是指方法的重载，它是根据参数列表的不同来区分不同的方法。通过编译之后会变成两个不同的方法，在运行时谈不上多态。而运行时多态是动态的，它是通过动态绑定来实现的，也就是大家通常所说的多态性。</p>
+<p>​        现多态有 3 个必要条件：继承、重写和向上转型。只有满足这 3 个条件，开发人员才能够在同一个继承结构中使用统一的逻辑实现代码处理不同的对象，从而执行不同的行为。</p>
+<ul>
+<li>继承：在多态中必须存在有继承关系的子类和父类。</li>
+<li>重写：子类对父类中某些方法进行重新定义，在调用这些方法时就会调用子类的方法。</li>
+<li>向上转型：在多态中需要将子类的引用赋给父类对象，只有这样该引用才既能可以调用父类的方法，又能调用子类的方法。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">class Wine &#123;</span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name &#x3D; name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Wine()&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String drink()&#123;</span><br><span class="line">        return &quot;喝的是 &quot; + getName();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 重写toString()</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public String toString()&#123;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> class JNC extends Wine&#123;</span><br><span class="line">    public JNC()&#123;</span><br><span class="line">        setName(&quot;JNC&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 重写父类方法，实现多态</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public String drink()&#123;</span><br><span class="line">        return &quot;喝的是 &quot; + getName();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> class JGJ extends Wine&#123;</span><br><span class="line">    public JGJ()&#123;</span><br><span class="line">        setName(&quot;JGJ&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;**</span><br><span class="line">     * 重写父类方法，实现多态</span><br><span class="line">     *&#x2F;</span><br><span class="line">    public String drink()&#123;</span><br><span class="line">        return &quot;喝的是 &quot; + getName();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        &#x2F;&#x2F;定义父类数组</span><br><span class="line">        Wine[] wines &#x3D; new Wine[2];</span><br><span class="line">        &#x2F;&#x2F;定义两个子类</span><br><span class="line">        JNC jnc &#x3D; new JNC();</span><br><span class="line">        JGJ jgj &#x3D; new JGJ();</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F;父类引用子类对象</span><br><span class="line">        wines[0] &#x3D; jnc;</span><br><span class="line">        wines[1] &#x3D; jgj;</span><br><span class="line"></span><br><span class="line">        for(int i &#x3D; 0 ; i &lt; 2 ; i++)&#123;</span><br><span class="line">            System.out.println(wines[i].toString() + &quot;--&quot; + wines[i].drink());</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(&quot;-------------------------------&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输出结果：</span><br><span class="line">null--喝的是 JNC</span><br><span class="line">null--喝的是 JGJ</span><br><span class="line">-------------------------------</span><br></pre></td></tr></table></figure>
+
+<p>可以看出，在子类重写重写方法后，向上引用后优先子类方法，若未重写则选择父类的方法.</p>
+<h2 id="3-object类"><a href="#3-object类" class="headerlink" title="3.object类"></a>3.object类</h2><h2 id="1-定义与说明"><a href="#1-定义与说明" class="headerlink" title="1.定义与说明"></a>1.定义与说明</h2><p>Object类是Java<code>java.lang</code>包下的核心类，<strong>Object类是所有类的父类</strong>，何一个类时候如果没有明确的继承一个父类的话，那么它就是Object的子类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public class Person&#123;&#125;</span><br><span class="line"></span><br><span class="line">public class Person extends Object&#123;&#125; </span><br></pre></td></tr></table></figure>
+
+<p>这两种类等价</p>
+<h2 id="4-equals方法和“-”运算法"><a href="#4-equals方法和“-”运算法" class="headerlink" title="4.equals方法和“==”运算法"></a>4.equals方法和“==”运算法</h2><p><strong>String类对象比较</strong>使用的是 equals()方法，实际上String类的equals()方法就是覆写 Object类中的equals()方法</p>
+<ul>
+<li>基本数据类型的比较用 <code>==</code> (如： a == 3，b == 4, a == b，比较的是值是否相等）<ul>
+<li>基本数据类型（char，int，short，long，byte，float，double，boolean）</li>
+</ul>
+</li>
+<li>引用类型数据比较：调用 <code>equals()</code>方法进行比较（比如String）<ul>
+<li>数据引用类就是自己创建的类</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-toString和hascode方法"><a href="#5-toString和hascode方法" class="headerlink" title="5.toString和hascode方法"></a>5.toString和hascode方法</h2><h2 id="6-抽象类与接口"><a href="#6-抽象类与接口" class="headerlink" title="6.抽象类与接口"></a>6.抽象类与接口</h2><h3 id="1-抽象类"><a href="#1-抽象类" class="headerlink" title="1.抽象类"></a>1.抽象类</h3><p>抽象类是一种有抽象方法的类，抽象方法只有声明，没有具体的实现，同时抽象类也可以有默认的方法实现。</p>
+<ul>
+<li><p>抽象类不能被实例化，只能被子类继承。</p>
+</li>
+<li><p>继承抽象类的子类，必须实现抽象方法， 或者继续声明为一个抽象方法，这样的话子类也是一个抽象类了。</p>
+</li>
+<li><p>抽象方法都是不可以与private、static、final和native一起使用的，因为抽象方法都是要子类来实现的。</p>
+</li>
+<li><p>抽象类方法可以声明public、protected等权限</p>
+</li>
+<li><p>抽象类中可以包含非抽象的普通方法</p>
+</li>
+<li><p>抽象类中可以有普通成员变量</p>
+</li>
+</ul>
+<h3 id="2-接口"><a href="#2-接口" class="headerlink" title="2.接口"></a>2.接口</h3><ul>
+<li>接口内的方法都必须被其所有实现类实现</li>
+<li>接口内的方法都是public的，如果接口创建了变量，那这个变量默认就是public static final</li>
+<li>不能用new来实例化一个接口，实现了接口的类，可以使用instance of来判断是否实现某一个接口</li>
+<li>当类实现了多个接口，这多个接口的方法不能同名</li>
+<li>接口中的所有方法必须都是抽象的,不能有非抽象的方法</li>
+<li>接口中没有普通成员变量</li>
+</ul>
+
+    </div>
+</div>
+
+<div class="cube-article-nav">
+    <ul>
+        
+        <li class="prev">
+            <a href="/1970/01/01/base64/">
+                <i class="cube-icon cube-prev" aria-hidden="true"></i>
+                base64
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+<!-- TODO 根据theme.comment的内容进行入口选择 -->
+
+
+
+        </div>
+        <div class="cube-right">
+            
+
+<div class="cube-search cube-sidebar" id="cube-search">
+    <div class="search-container">
+        <input type="text" placeholder="搜索" class="cube-search-input" id="cube-search-input">
+        <i class="cube-icon cube-icon-search cube-search-submit" aria-hidden="true"></i>
+    </div>
+    <!-- TODO 通过给window赋一个全局变量，通过脚本赋值 -->
+</div>
+<script>
+    (function (window) {
+        'use strict';
+        window.searchModule = {}
+        window.searchModule.JSONUrl = '/content.json'
+        window.searchModule.rootUrl = '/'
+    })(window)
+</script>
+<div class="cube-search-form">
+    <div class="cube-search-control">
+        <input type="text" placeholder="搜索" class="search-input">
+        <a class="close-button">
+            <i class="cube-icon cube-close" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="cube-search-result"></div>
+</div>
+
+
+<div class="cube-author cube-sidebar" id="cube-author">
+    
+    
+    <span>qiu-yunhao</span>
+    
+    
+    <div class="count">
+        <a class="count articles"><span>7</span>文章</a>
+        <a class="count tags"><span>4</span>标签</a>
+        <a class="count categories"><span>0</span>分类</a>
+    </div>
+</div>
+
+
+
+<div class="cube-music cube-sidebar" id="cube-music">
+    <div class="cube-player aplayer" id="cube-player"></div>
+</div>
+<script>
+    (function (window) {
+        window.musicModule = {}
+        window.musicModule.musicConfig = '{"narrow":false,"autoplay":false,"showlrc":3,"theme":"#b7daff","mutex":true,"mode":"circulation","preload":"auto","listmaxheight":"513px","music":[{"title":"Dear friends","author":"TRIPLANE","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/TRIPLANE - Dear friends.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Dear friends - TRIPLANE.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/TRIPLANE - Dear friends.jpg"},{"title":"Butter-Fly","author":"和田光司","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/和田光司 - Butter-Fly (ピアノヴァージョン).mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/Butter-Fly (ピアノヴァージョン) - 和田光司.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/和田光司 - Butter-Fly (ピアノヴァージョン).jpg"},{"title":"宵闇花火","author":"葉月ゆら","url":"http://cube-1252774894.cosgz.myqcloud.com/music/source/葉月ゆら - 宵闇花火.mp3","lrc":"http://cube-1252774894.cosgz.myqcloud.com/music/lrc/宵闇花火 - 葉月ゆら.lrc","pic":"http://cube-1252774894.cosgz.myqcloud.com/music/image/葉月ゆら - 宵闇花火.jpg"}]}'
+        window.musicModule.lrcConfig = {
+            open: '开启歌词',
+            close: '关闭歌词'
+        }
+    })(window)
+</script>
+
+
+
+<div class="cube-recent-posts cube-sidebar" id="cube-recent-posts">
+    <div class="title">
+        <a>近期文章</a>
+    </div>
+    <ul class="list">
+        
+        
+        <li>
+            <!-- TODO 如果文章要显示图片，那么在front-matter上添加preview属性(url or path) -->
+            
+            <div class="normal">
+                <p class="index first">
+                    <span>1</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/06/04/%E8%8F%9C%E9%B8%A1%E7%9A%84%E5%88%92%E6%B0%B4%E6%97%A5%E5%B8%B8/" title=""></a>
+                </p>
+            </div>
+            
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>2</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/05/15/crypto/" title="冲刺卷RSA">冲刺卷RSA</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>3</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/04/10/Room%E6%95%B0%E6%8D%AE%E5%BA%93/" title=""></a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>4</span>
+                </p>
+                <p class="title">
+                    <a href="/2020/12/14/%E5%AF%86%E7%A0%81%E5%AD%A6/" title="古典密码">古典密码</a>
+                </p>
+            </div>
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>5</span>
+                </p>
+                <p class="title">
+                    <a href="/2020/12/14/android%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="安卓学习笔记">安卓学习笔记</a>
+                </p>
+            </div>
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+
+
+
+<div class="cube-tagcloud cube-sidebar" id="cube-tagcloud">
+    <div class="title">
+        <a href="/tags">标签云</a>
+    </div>
+    <div class="cube-boxs">
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/android/">#-android</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/%E5%AF%86%E7%A0%81/">#-密码</a>
+        </div>
+        
+        
+        <div class="cube-box ">
+            <a href="/tags/java/">#java</a>
+        </div>
+        
+        
+        <div class="cube-box-bg ">
+            <a href="/tags/%E5%AF%86%E7%A0%81/">#密码</a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="cube-links cube-sidebar" id="cube-links">
+    <div class="title">
+        <a>个人链接</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            
+            
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/links/GitHub.png">
+            
+            <a href="https://github.com/qiu-yunhao" target="_blank">GitHub</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+<div class="cube-friend-links cube-sidebar" id="cube-friend-links">
+    <div class="title">
+        <a>友情链接</a>
+    </div>
+    <ul class="list">
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/friend_links/micblo.png">
+            <a href="https://blog.micblo.com/" target="_blank">罗大佬</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="http://cube-1252774894.cosgz.myqcloud.com/friend_links/DIYgod.jpg">
+            <a href="https://www.anotherhome.net/" target="_blank">DIYgod</a>
+        </li>
+        
+        <li>
+            <!-- TODO change avatar.png to friend.png-->
+            <img src="/images/friend_links.jpg ">
+            <a href="https://aonosora.com/" target="_blank">咪西西の部落格</a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+    </div>
+</div>
+<footer class="cube-footer">
+    
+© 2017 qiu-yunhao
+
+<br>
+Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+</footer>
+<!-- inject:script -->
+<script src="/js/script.js"></script>
+<!-- endinject -->
+<div class="cube-loading out"></div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
+<!--单击显示文字-->
+<script type="text/javascript" src="/js/click_show_text.js"></script>
