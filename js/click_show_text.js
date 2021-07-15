@@ -2,7 +2,7 @@ var a_idx = 0;
 jQuery(document).ready(function($) {
     $("body").click(function(e) {
         var a = new Array
-        ("我", "是", "菜", "狗", "继", "续", "加", "油","!");
+        ("我","是","菜","狗","继","续","加","油","！");
         var $i = $("<span/>").text(a[a_idx]);
         a_idx = (a_idx + 1) % a.length;
         var x = e.pageX,
@@ -20,10 +20,10 @@ jQuery(document).ready(function($) {
             "top": y - 180,
             "opacity": 0
         },
-			3000,
-			function() {
-			    $i.remove();
-			});
+            3000,
+            function() {
+                $i.remove();
+            });
     });
     setTimeout('delay()', 2000);
 });
